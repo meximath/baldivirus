@@ -11,7 +11,7 @@
 
 <script>
 document.getElementById('loadBookmarklet').addEventListener('click', function() {
-    var bookmarkletCode = "javascript:(function(){var url='baldi.mp4';setInterval(function(){window.open(url,'_blank','width=600,height=400');},2000);})();";
+    var bookmarkletCode = "javascript:(function(){var url='baldi.mp4';var videoWindow = window.open('', '_blank', 'width=600,height=400');videoWindow.document.write('<video src=\"' + url + '\" autoplay=\"autoplay\" controls=\"controls\" width=\"100%\" height=\"100%\"></video>');})();";
     var script = document.createElement('script');
     script.textContent = bookmarkletCode;
     document.body.appendChild(script);
